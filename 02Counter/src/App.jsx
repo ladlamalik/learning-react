@@ -17,17 +17,20 @@ function App() {
   const removeValue = () => {
     setCounter(counter - 1);
   }
+
+  
   return (
     <>
       <h1>Chai aur React</h1>
       <h2>Counter Value: {counter}</h2>
-
-      <button
-      onClick={addValue}>Add Value</button>{' '}
-      <button
-      onClick={removeValue}>Remove Value</button>
+      <button onClick={addValue} disabled={counter >= 20}>
+        Add Value
+      </button>{' '}
+      <button onClick={removeValue} disabled={counter <= 0}>
+        Remove Value
+      </button>
     </>
-  )
+  );
 }
 
 export default App
